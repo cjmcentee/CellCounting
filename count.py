@@ -13,8 +13,9 @@ def nothing(*arg):
 #
 from optparse import OptionParser
 parser = OptionParser()
+parser.set_description("Counts cells in an image using the template single_yeast_zoom_near.jpg and binary thresholding.")
 parser.add_option("-i", "--image", dest="imageFileName", action="store", metavar="FILE", help="input image")
-parser.add_option("-g", "--gui", dest="gui", help="display gui")
+parser.add_option("-g", "--gui", dest="gui", action="store_true", default=False, help="display gui")
 
 (options, args) = parser.parse_args()
 display_gui = options.gui is not None
